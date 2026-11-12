@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "api": "json-server --watch db.json --port 3000",
+    "dev": "concurrently -k -n API,NG -c yellow,cyan \"npm:api\" \"npm:start\""
   },
   "private": true,
   "dependencies": {
@@ -15,6 +17,7 @@
     "@angular/forms": "^22.2.0-next",
     "@angular/platform-browser": "^22.2.0-next",
     "@angular/router": "^22.2.0-next",
+    "json-server": "^1.0.0-beta.15",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.16.0"
@@ -24,6 +27,7 @@
     "@angular/cli": "^22.2.0-next",
     "@angular/compiler-cli": "^22.2.0-next",
     "@types/node": "^16.11.35",
+    "concurrently": "^10.0.7",
     "typescript": "~6.0.3"
   }
 }
